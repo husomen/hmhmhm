@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Özür Dilerim Müzeyyen</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #ffdde1;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .panel {
+      background: white;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 400px;
+      z-index: 1;
+    }
+
+    .panel h1 {
+      font-size: 1.5rem;
+      color: #333;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(45deg);
+      animation: float 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        bottom: -10%;
+        left: calc(100% * var(--i));
+      }
+      100% {
+        bottom: 110%;
+        left: calc(100% * var(--i) + 10px);
+      }
+    }
+
+    iframe {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h1>Özür dilerim Müzeyyen...<br>Modunu yükseltmek için elimden geleni yapmaya hazırım.</h1>
+  </div>
+
+  <!-- YouTube müzik -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/HpG53Fz1RYo?autoplay=1&loop=1&playlist=HpG53Fz1RYo" frameborder="0" allow="autoplay"></iframe>
+
+  <!-- Kalpler -->
+  <script>
+    for (let i = 0; i < 30; i++) {
+      let heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.setProperty('--i', Math.random());
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+    }
+  </script>
+</body>
+</html>
